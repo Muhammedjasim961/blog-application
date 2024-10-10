@@ -1,0 +1,34 @@
+<div class="author">
+  <h1 class="author_heading">Hi, I'am Jasimvk</h1>
+  <p class="author_body">Software Engineer and Content Creator</p>
+</div>
+
+<img
+  src="https://phlearn.com/wp-content/uploads/2020/01/annie-spratt-ogDort6vKuE-unsplash.jpg"
+  alt="Blog image"
+  width="900"
+  height="500"
+  class="hero-image"
+/>
+<section class="articles">
+  <h1 class="article_heading">Latest Posts</h1>
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+
+    <li>
+      <a href="/post<%= post._id %>">
+        <span class="post_title"><%= post.title %> </span>
+        <span class="article_list_date"
+          ><%= post.createAt.toDateString() %></span
+        >
+      </a>
+    </li>
+
+    <% }) %>
+  </ul>
+
+  <% if (nextPage !== null) { %>
+
+  <a href="/?page=<%= nextPage %>" class="pagination">&lt; view Older posts</a>
+  <% } %>
+</section>
